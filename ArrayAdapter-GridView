@@ -1,0 +1,58 @@
+package com.example.multi_screen.apps;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+
+public class ColorActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_color);
+
+		ArrayList<String> words = new ArrayList<String>();
+
+		words.add("one");
+		words.add("Two");
+		words.add("Three");
+		words.add("Four");
+		words.add("Five");
+		words.add("Six");
+		words.add("Seven");
+		words.add("Eight");
+		words.add("Nine");
+		words.add("Two");
+		words.add("Three");
+		words.add("Four");
+		words.add("one");
+		words.add("Two");
+		words.add("Three");
+		words.add("Four");
+
+		// /
+		ArrayAdapter<String> item = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, words);
+
+		GridView gridView = (GridView) findViewById(R.id.grid);
+
+		gridView.setAdapter(item);
+	}
+}
+
+
+///activity_color.xml
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/grid"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:numColumns="2" >
+
+</GridView>
